@@ -21,6 +21,7 @@ public class TargetValueIndex {
         }else{
             System.out.println(res);
         }
+        sc.close();
     }
 
     public static int linearSearch(int[] arr, int targ){
