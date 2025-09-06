@@ -9,14 +9,19 @@ public class ArrayDoubletSum {
         int[] arr = { 2, 5, 43, 1, 4, 9 };
         int x = sc.nextInt();
 
+        boolean flag = false;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] + arr[j] == x) {
                     System.out.println(arr[i] + " " + arr[j]);
-                }
+                    flag = true;
+                    break;
+              }
             }
+            if(flag == true) break;
         }
         sc.close();
 
     }
 }
+       
