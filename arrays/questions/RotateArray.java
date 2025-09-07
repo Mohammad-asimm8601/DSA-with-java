@@ -20,6 +20,8 @@ public class RotateArray {
         for (int ele : arr) {
             System.out.print(ele + " ");
         }
+        sc.close();
+
 
     }
 
