@@ -8,36 +8,36 @@ import java.util.Scanner;
 
 public class RotateArray {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] a = {1, 2, 3, 4, 5, 6, 7};
-        
 
-        for(int ele : a){
-            System.out.print(ele+" ");
-        }
-        System.out.println();
-        int k = sc.nextInt();
-        rotate(a, k);
-        // for(int ele : a ){
-        //     System.out.print(a[ele]+" ");
-        // }
-        
-        
-    }
-    public static void rotate(int[] a, int k) {
-        int n = a.length;
-        int[] b = new int[n];
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            if(i < k){
-                b[i] = a[n-k+i];
-                
-            }
-            else{
-                b[i] = a[i-k];
-            }
-            
+            arr[i] = sc.nextInt();
         }
-        
-        
+        int k = sc.nextInt();
+        rotate(arr, k);
+        for (int ele : arr) {
+            System.out.print(ele + " ");
+        }
+
+    }
+
+    public static void rotate(int[] arr, int k) {
+        int n = arr.length;
+        k = k % n;
+        reverse(arr, 0, n - k - 1);
+        reverse(arr, n - k, n - 1);
+        reverse(arr, 0, n - 1);
+    }
+
+    public static void reverse(int[] arr, int i, int j) {
+        while (i <= j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
     }
 }
