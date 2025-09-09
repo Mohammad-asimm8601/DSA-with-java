@@ -15,7 +15,7 @@ public class MergeTwoSortedArrays {
 //         crr[i+m] = brr[i];
 //         }
 //         //sort array (crr)
-//         for (int i = 0; i < m+n; i++) {
+//         for (int i = 0; i <= m+n; i++) {
 //         for (int j = i+1; j < m+n-1; j++) {
 //             if(crr[i] > crr[j]){
 //                 int temp = crr[i];
