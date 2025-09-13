@@ -1,3 +1,4 @@
+// Find the second largest element in the given array in one pass.
 package arrays.assignment;
 
 public class SecondLargestElement {
