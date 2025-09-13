@@ -16,7 +16,6 @@ public class SecondLargestNum {
             if(arr[i] != mx)
                 smx = Math.max(smx, arr[i]);
         }
-        System.out.println(mx);
         System.out.println(smx);
     }
 }
