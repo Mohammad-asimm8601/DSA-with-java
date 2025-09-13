@@ -13,9 +13,8 @@ public class SmallestMissingElement {
                 return res;
             }
             i++; j++;
-            
         }
-        return n;
+        return n; 
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
