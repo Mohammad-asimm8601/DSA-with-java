@@ -6,17 +6,18 @@ import java.util.Scanner;
 
 public class ArrayListSearch {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        ArrayList<Integer> arr = new ArrayList<>();
-        for(int i=1; i<=n; i++){
-             arr.add(sc.nextInt());
-        }
-        
+        try (Scanner sc = new Scanner(System.in)) {
+            int n = sc.nextInt();
+            ArrayList<Integer> arr = new ArrayList<>();
+            for(int i=1; i<=n; i++){
+                 arr.add(sc.nextInt());
+            }
+            
 
-        int target = sc.nextInt();
-        int res = listSearch(arr, target);
-        System.out.println(res);
+            int target = sc.nextInt();
+            int res = listSearch(arr, target);
+            System.out.println(res);
+        }
     }
     public static int listSearch(ArrayList<Integer> arr, int target) {
         for (int i=0; i < arr.size(); i++) {
