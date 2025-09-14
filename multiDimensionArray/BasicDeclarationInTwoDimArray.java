@@ -1,4 +1,4 @@
-package multiDimensionArray;
+package multidimensionarray;
 
 public class BasicDeclarationInTwoDimArray {
     public static void main(String[] args) {
