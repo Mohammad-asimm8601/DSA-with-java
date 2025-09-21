@@ -9,10 +9,11 @@ public class MultiplicationOfTwoMatrices {
         if(a[0].length != b.length){
             System.out.println("Multiplication not possible");
         }
-        else{
+        else{ // Multiplication is posssible
             int[][] c = new int[a.length][b[0].length];
             for (int i = 0; i < c.length; i++) {
                 for (int j = 0; j < c[0].length; j++) {
+                    // c[i][j] = a[i][0]*b[0][j] + a[i][1]*b[1][j] + ... .
                     for (int k = 0; k < b.length; k++) {
                         c[i][j] += (a[i][k] * b[k][j]);
                     }
