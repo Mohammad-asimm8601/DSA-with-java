@@ -1,3 +1,4 @@
+// Given a string consisting of lowercase English alphabets. print the character that is occurring most number of times.
 package string.question;
 
 import java.util.Scanner;
