@@ -18,6 +18,7 @@ public class WatersBottle {
             empty  = empty % numExchange;
             empty +=getfull;
             full += getfull;
+            numExchange++;
         }
         return full;
     }
