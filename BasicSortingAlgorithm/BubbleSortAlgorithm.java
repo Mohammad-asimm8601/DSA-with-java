@@ -3,6 +3,17 @@ package BasicSortingAlgorithm;
 import java.util.Scanner;
 
 public class BubbleSortAlgorithm {
+    public static void print(int[] arr){
+        for(int ele : arr){
+            System.out.print(ele+" ");
+        }
+        System.out.println();
+    }
+    public static void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             int n = sc.nextInt();
@@ -16,18 +27,14 @@ public class BubbleSortAlgorithm {
                 boolean flag = true;
                 for (int i = 0; i < n - 1 - j; i++) {
                     if (arr[i] > arr[i + 1] ) {
-                        int temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
+                        swap(arr, i, i+1);
                         flag = false;
 
                     }
                 }
                 if (flag == true) break;
             }
-            for (int ele : arr) {
-                System.out.print(ele + " ");
-            }
+            print(arr);
         }
     }
 }
