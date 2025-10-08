@@ -1,4 +1,4 @@
-package BasicSortingAlgorithm.Question;
+package BasicSorting.Question;
 
 public class KthMaximumAtRightPosition {
     public static void main(String[] args) {

@@ -1,5 +1,5 @@
 // Check if given array is sorted arrray.
-package BasicSortingAlgorithm;
+package BasicSorting;
 
 public class CheckSorting {
     public static void main(String[] args) {

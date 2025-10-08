@@ -1,4 +1,4 @@
-package BasicSortingAlgorithm;
+package BasicSorting;
 
 public class InsertionSort {
     public static void print(int[] arr){

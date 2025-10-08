@@ -1,5 +1,5 @@
 // Sort a given array in decreasing order using bubble sort.
-package BasicSortingAlgorithm.Question;
+package BasicSorting.Question;
 
 public class BubbleSortDecreasingOrder {
     public static void main(String[] args) {
