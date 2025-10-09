@@ -9,15 +9,16 @@ public class BS {
         int low = 0, hi = n - 1;
         while (low <= hi) {
             int mid = (low + hi) / 2;
-            if (arr[mid] < target)
-                low = mid + 1;
-            else if (arr[mid] > target)
-                hi = mid - 1;
-            else if (arr[mid] == target) {
+            if (arr[mid] == target) {
                 System.out.println("Element " + target + " found at index : " + mid);
                 flag = true;
                 break;
             }
+            else if (arr[mid] < target)
+                low = mid + 1;
+            else if (arr[mid] > target)
+                hi = mid - 1;
+            
         }
         if (flag == false) {
             System.out.println("Element not found!");
