@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class SquareRoot {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        int res = mySqrt(x);
-        System.out.println(res);
+        try (Scanner sc = new Scanner(System.in)) {
+            int x = sc.nextInt();
+            int res = mySqrt(x);
+            System.out.println(res);
+        }
     }
 
     public static int mySqrt(int x) {
