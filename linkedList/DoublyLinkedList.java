@@ -69,7 +69,39 @@ class DLL {
         temp.next = y; y.prev = temp;
         size++;
     }
-
+    void deleteAtHead() throws Error{
+        if(size == 0) throw new Error("List is Empty");
+        head = head.next;
+        head.prev = null;
+        size--;
+    }
+    void deleteAtTail() throws Error{
+        if(size == 0) throw new Error("List is Empty");
+        tail = tail.prev;
+        tail.next = null;
+        size--;
+    }
+    void delete(int idx) throws Error{
+        if(idx == 0){
+            deleteAtHead();
+            return;
+        }
+        if(idx == size-1){
+            deleteAtTail();
+            return;
+        }
+        if(idx < 0 || idx >= size){
+            throw new Error("Invalid Index!");
+        }
+        dNode temp = head;
+        for (int i = 1; i <= idx-1; i++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        temp = temp.next;
+        temp.prev = temp.prev.prev; 
+        size--;
+    }
 }
 
 public class DoublyLinkedList {
@@ -125,5 +157,9 @@ public class DoublyLinkedList {
         list.insert(2, 12);
         list.display();
         list.size();
+        list.delete(2);
+        list.display();
+        list.size();
+
     }
 }
