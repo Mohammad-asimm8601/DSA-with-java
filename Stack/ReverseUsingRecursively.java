@@ -8,6 +8,7 @@ public class ReverseUsingRecursively {
         int top = st.pop();
         System.out.print(top+" ");
         stackRev(st);
+        st.push(top);
     }
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
