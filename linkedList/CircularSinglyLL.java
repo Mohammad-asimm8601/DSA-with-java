@@ -1,4 +1,4 @@
-package linkedList;
+package linkedlist;
 class SCLL{
     Node head;
     Node tail;

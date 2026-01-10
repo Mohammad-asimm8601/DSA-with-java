@@ -1,4 +1,4 @@
-package linkedList;
+package linkedlist;
 
 public class ShallowCopyOfANode {
     public static void main(String[] args) {

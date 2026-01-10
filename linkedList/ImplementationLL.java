@@ -1,4 +1,4 @@
-package linkedList;
+package linkedlist;
 
 class SLL{    // User defined Structure
     private Node head;
