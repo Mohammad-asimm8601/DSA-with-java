@@ -2,7 +2,7 @@ package Stack;
 
 public class ArrayImplementation {
     public static class Stack{
-        private int[] arr = new int[5];
+        final private int[] arr = new int[5];
         private int  idx = 0;
         void push(int x){
             if(isFull()){
