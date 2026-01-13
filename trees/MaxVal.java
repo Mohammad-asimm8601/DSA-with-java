@@ -5,8 +5,14 @@ public class MaxVal {
         if(root == null) return 0;
         int left = max(root.left);
         int right = max(root.right);
-        int a =root.val;
+        int a = root.val;
         return Math.max(a, Math.max(left, right));
+
+    }
+    private static int size(Node root){
+        if(root == null) return 0;
+        
+        return 1 + size(root.left) + size(root.right);
 
     }
     public static void main(String[] args) {
@@ -24,5 +30,6 @@ public class MaxVal {
         b.left = e; b.right = f;
         d.right = g;
         System.out.println(max(root));
+        System.out.println(size(root));
     }
 }
