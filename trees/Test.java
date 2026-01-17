@@ -3,54 +3,64 @@ import java.util.*;
 
 public class Test
 {   
-    public static void preorder(Node root){
-    if(root == null ) return;
-    System.out.print(root.val+" ");
-    preorder(root.left);
-    preorder(root.right);
+    public static void levelwise(Node root){
+        Queue<Node> q = new LinkedList<>();
+        if(root != null)
+            q.add(root);
+        while(!q.isEmpty()){
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                Node front = q.poll();
+                System.out.print(front.val+" ");
+                if(front.left != null) q.add(front.left);
+                if(front.right != null) q.add(front.right);
+            }
+            System.out.println();
+        }
     }
-    public static void inorder(Node root){
-    if(root == null ) return;
-    inorder(root.left);
-    System.out.print(root.val+" ");
-    inorder(root.right);
-    }
-    public static void postorder(Node root){
-    if(root == null ) return;
-    postorder(root.left);
-    postorder(root.right);
-    System.out.print(root.val+" ");
-    }
-    public static Node insert(Node root , int x){
-        if(root == null ) return new Node(x);
+    public static Node buildTree(Scanner sc , int n){
+        if(n == 0) return null;
+        int rootval = sc.nextInt();
+        if(rootval == -1) return null;
+        Node root = new Node(rootval);
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        while(!q.isEmpty()){
+        int count = 1;
+        while(!q.isEmpty() && count < n){
             Node temp = q.poll();
-            if(temp.left == null){
-                temp.left = new Node(x);
-                break;
-            }else q.add(temp.left);
-            if(temp.right == null){
-                temp.right = new Node(x);
-                break;
-            }else q.add(temp.right);
+
+            // left child
+            int leftval = sc.nextInt();
+            count++;
+            if(leftval != -1){
+                temp.left = new Node(leftval);
+                q.add(temp.left);
+            }
+            if(count >= n) break;
+
+            // right child
+            int rightval = sc.nextInt();
+            count++;
+            if(rightval != -1){
+                temp.right = new Node(rightval);
+                q.add(temp.right);
+            }
         }
         return root;
+    }
+    public static void display(Node root){
+        if(root == null) return;
+        System.out.print(root.val+" ");
+        display(root.left);
+        display(root.right);
     }
 	public static void main(String[] args) {
 		try (Scanner sc = new Scanner(System.in)) {
             int n = sc.nextInt();
-            Node root = null;
-            for(int i=0; i<n; i++){
-                int x = sc.nextInt();
-                root = insert(root, x);
-            }
-            preorder(root);
-            System.out.println();
-            inorder(root);
-            System.out.println();
-            postorder(root);
+            Node root = buildTree(sc, n);
+            // display(root);
+            levelwise(root);
+
         }
 	}
 }

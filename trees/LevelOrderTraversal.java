@@ -2,20 +2,37 @@ package trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
 public class LevelOrderTraversal {
-    private static void levelOrder(Node root) {
-        Queue<Node> q = new LinkedList<>();
-        if (root != null)
-            q.add(root);
-        while (!q.isEmpty()) {
-            Node front = q.remove();
-            System.out.print(front.val + " ");
-            if (front.left != null)
-                q.add(front.left);
-            if (front.right != null)
-                q.add(front.right);
+    static class Pair{
+        Node node;
+        int val;
+    
+        public Pair(Node node, int val) {
+             this.node = node;
+             this.val = val;
         }
+        
+    }
+    private static void levelOrder(Node root) {
+        int prevlvl = 0;
+        Queue<Pair> q = new LinkedList<>();
+        if (root != null)
+            q.add(new Pair(root, 0));
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            Node temp = front.node;
+            int lvl = front.val;
+            if(lvl != prevlvl) {
+                System.out.println();
+                prevlvl++;
+            }
+            System.out.print(front.node.val + " ");
+            if (temp.left != null)
+                q.add(new Pair(temp.left, lvl+1));
+            if (temp.right != null)
+                q.add(new Pair(temp.right, lvl+1));
+        }
+    
     }
 
     public static void display(Node root) {
