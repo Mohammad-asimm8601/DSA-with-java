@@ -24,7 +24,7 @@ public class basicSet {
 
         Object[] arr = set.toArray();
         for(Object ele : arr){
-            System.out.print(ele+" ");
+            System.out.printf(ele+" ");
         }
 
     }
