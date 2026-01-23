@@ -18,5 +18,7 @@ public class SetIterate {
         set.add(50);
         System.out.println(set);
         print(set);
+        set.clear();
+        System.out.println(set);
     }
 }
