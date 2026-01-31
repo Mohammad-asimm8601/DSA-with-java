@@ -1,7 +1,5 @@
 package DynamicProgramming;
 
-
-
 public class MinCost {
     public static void main(String[] args) {
         int[] cost = { 1, 4, 100, 3, 3, 50, 6 };
