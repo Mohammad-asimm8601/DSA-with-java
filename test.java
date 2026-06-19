@@ -10,7 +10,6 @@ public class test {
             i++;
             j--;
         }
-        System.out.println(s);
-        
+        System.out.println(s); 
     }
 }
